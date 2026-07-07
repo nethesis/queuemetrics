@@ -5,7 +5,7 @@ $settings = queuemetrics_get_details();
 
 foreach ($settings as $key => $val) {
     $var[$val['keyword']] = isset($_REQUEST[$val['keyword']]) ? $_REQUEST[$val['keyword']] : $val['value'];
-    $$val['keyword'] = $var[$val['keyword']];
+    ${$val['keyword']} = $var[$val['keyword']];
 }
 
 $checked = (isset($ivr_logging) && $ivr_logging == 'true')?'CHECKED':'';
